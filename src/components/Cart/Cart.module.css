@@ -21,4 +21,11 @@
     margin-right: 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
+  .cart-item__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-right: 0;
   
+  }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Products from '../Cart/Products';
+import Products from './Products';
 import styles from './ProductList.module.css';
 const productList = [
     {
@@ -76,16 +76,12 @@ const productList = [
   ];
   
 
-const ProductList = () => {
-
-    const onAddtoCartHandler=()=>{
-
-    }
+const ProductList = () => {    
   return (
     <div className={styles.container}>
       <h2>Products</h2>
       <div className={styles.list}>
-        <Products items={productList} onAdd={onAddtoCartHandler} />
+        <Products items={productList} />
       </div>
     </div>
   );

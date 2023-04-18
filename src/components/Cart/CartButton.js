@@ -1,6 +1,6 @@
 import React from "react";
 import classes from  './CartButton.module.css'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../Store/CartReducer";
 const CartButton=(props)=>{
     const dispatch=useDispatch();
@@ -9,7 +9,7 @@ const CartButton=(props)=>{
       }
       
 
-    const cartItemsCount=5;
+    const cartItemsCount=useSelector((state)=>state.cart.totalQuantity)
     return(
         <button onClick={cartVisibleHandler}>
           Cart
