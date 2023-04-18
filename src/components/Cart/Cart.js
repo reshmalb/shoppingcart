@@ -3,6 +3,7 @@ import CartItem from "./CartItem";
 import { cartActions } from "../../Store/CartReducer";
 import { useDispatch, useSelector,usedispatch } from "react-redux";
 import styles from './Cart.module.css'
+import { UIActions } from "../../Store/UI-Slice";
 
 const Cart=()=>{
     const cartItem=useSelector((state)=>state.cart.cartdetails)

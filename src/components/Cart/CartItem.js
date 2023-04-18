@@ -10,7 +10,7 @@ const CartItem = (props) => {
           <h4>{props.title}</h4>
           <p> ${props.price.toFixed(2)}</p>
           <p>{props.quantity}</p>
-          <p>{props.totalprice}</p>
+          <p>${props.totalprice}</p>
           <div className={styles['cart-item__buttons']}>
             <button onClick={props.onAdd}>+</button>            
             <button onClick={props.onRemove}>-</button>

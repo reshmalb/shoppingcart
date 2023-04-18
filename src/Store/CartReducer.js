@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialCart={isCartVisible:false,
+const initialCart={
                     cartdetails:[],
                     totalQuantity:0, 
                      
@@ -51,10 +51,7 @@ const cartSlice=createSlice({
                }
 
              },
-             visibleCart(state){
-                state.isCartVisible= !state.isCartVisible;
-             }
-
+           
     }
 });
 
