@@ -2,20 +2,11 @@ import React from 'react';
 import classes from './Header.module.css'
 import { cartActions } from '../Store/CartReducer';
 import { useSelector,useDispatch } from 'react-redux';
-import CartItem from '../components/CartItem';
-const Header = () => {
-    const iscartvisible=useSelector((state)=>state.cart.isCartVisible)
-    const dispatch=useDispatch();
+import CartButton from '../components/Cart/CartButton';
+const Header = props=> {   
 
 
-      const cartItemsCount = 5; // Replace with the actual number of items in the cart
-
-
-  const cartVisibleHandler=()=>{
-    dispatch(cartActions.visibleCart())
-
-  }
-
+  
   return (
     <div>
       <nav className={classes.header}>
@@ -23,14 +14,10 @@ const Header = () => {
         <h1>Reduxapp</h1>
       </div>   
         <div className={classes.header__cart}>
-        <button  onClick={cartVisibleHandler}>
-          Cart
-          <span className={classes.header__cartbadge}>{cartItemsCount}</span>
-        </button>
+       <CartButton onClick={props.CartButtonClick}></CartButton>
       </div>
     </nav>
-      {iscartvisible && <CartItem/>}
-      </div>
+     </div>
   );
 };
 

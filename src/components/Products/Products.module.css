@@ -1,0 +1,11 @@
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product {
+    flex-basis: 45%;
+    margin: 10px;
+  }
+  
