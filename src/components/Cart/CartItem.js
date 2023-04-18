@@ -8,9 +8,9 @@ const CartItem = (props) => {
     
         <div className={styles['cart-item__details']}>
           <h4>{props.title}</h4>
-          <p>Price: ${props.price}</p>
-          <p>Quantity:{props.quantity}</p>
-          <p>Amount: ${props.totalprice}</p>
+          <p> ${props.price.toFixed(2)}</p>
+          <p>{props.quantity}</p>
+          <p>{props.totalprice}</p>
           <div className={styles['cart-item__buttons']}>
             <button onClick={props.onAdd}>+</button>            
             <button onClick={props.onRemove}>-</button>

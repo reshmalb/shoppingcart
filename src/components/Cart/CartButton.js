@@ -10,6 +10,8 @@ const CartButton=(props)=>{
       
 
     const cartItemsCount=useSelector((state)=>state.cart.totalQuantity)
+
+    console.log("count",cartItemsCount);
     return(
         <button onClick={cartVisibleHandler}>
           Cart

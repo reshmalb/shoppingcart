@@ -3,4 +3,19 @@
     font-weight: bold;
     margin: 0 1rem;
   }
+  .header__cartbadge {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
   
