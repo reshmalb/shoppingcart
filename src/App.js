@@ -13,7 +13,7 @@ import Notification from './components/Notification/Notification';
 
 
 
-let initialFetch=true;
+let initialFetch = true;
 
 function App() {
   const iscartvisible=useSelector((state)=>state.UI.isCartVisible)
@@ -35,7 +35,7 @@ function App() {
         dispatch(UIActions.showNotification({
           status:'success',
           title:'sucess',
-          message:'sendng cart failed..'
+          message:'Cart items  updated successfully ..'
         }))
 
       }
@@ -44,24 +44,30 @@ function App() {
       initialFetch=false;
       return;
     }
+      
+       postData().catch(error=>{
+          dispatch(UIActions.showNotification({
+            status:'error',
+            title:'error..',
+            message:'Sending data failed...'
+          }))
+    
+        })
 
-     postData().catch(error=>{
-      dispatch(UIActions.showNotification({
-        status:'error',
-        title:'error..',
-        message:'send data successfully...'
-      }))
-
-    })
+    
+     
 
        
 
-  },[cart])
+  },[cart,dispatch])
 
 
   return (
     <Fragment>
-      {notification &&<Notification/>}
+      {notification &&<Notification
+               status={notification.status}
+               title={notification.title}
+               message={notification.message}/>}
         <Header />
         {iscartvisible && <Cart/> }
         <ProductList/>
